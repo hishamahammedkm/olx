@@ -7,6 +7,7 @@ import Arrow from '../../assets/Arrow';
 import SellButton from '../../assets/SellButton';
 import SellButtonPlus from '../../assets/SellButtonPlus';
 import { AuthContext, FirebaseContest } from '../../store/Context';
+import {Link} from 'react-router-dom'
 function Header() {
   const history = useHistory()
   const {firebase} = useContext(FirebaseContest)
@@ -53,7 +54,7 @@ function Header() {
             history.push('/login')
           }}>Logout</span>
         }
-
+        <Link to='/create'>
         <div className="sellMenu">
           <SellButton></SellButton>
           <div className="sellMenuContent">
@@ -61,6 +62,7 @@ function Header() {
             <span>SELL</span>
           </div>
         </div>
+        </Link>
       </div>
     </div>
   );
